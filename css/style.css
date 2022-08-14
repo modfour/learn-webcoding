@@ -7,15 +7,14 @@ h1 {
 }
 .content {
     background-color: #fff;
-    width: 600px;
+    width: 80%;
     border: 1px solid #d1d1d1;
     padding: 30px; /* 内側の余白 */
     margin: 0 auto;
-    /* これは以下と同じ
-        margin-top: 0;
-        margin-right: auto;
-        margin-bottom: 0;
-        margin-left: auto; */
+}
+table, th, td {
+    border: 1px solid #d1d1d1;
+    margin: 0 auto 0 0
 }
 input {
     border: none;
