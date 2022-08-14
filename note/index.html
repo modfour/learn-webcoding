@@ -10,6 +10,133 @@
     <body>
         <div class="content">
             <h1>学習ノート</h1>
+            <h2>HTMLタグ</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th scope="col">タグ</th>
+                        <th scope="col">説明</th>
+                        <th scope="col">備考</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">&lt;html&gt;</th>
+                        <td>HTML文書であることを宣言する</td>
+                        <td>直子は&lt;head&gt;と&lt;body&gt;がひとつずつ</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">&lt;head&gt;</th>
+                        <td>文書のメタ情報を記述するセクション</td>
+                        <td>文字情報やCSSの指定など<br>&lt;title&gt;以外の内容は基本表示されない</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">&lt;body&gt;</th>
+                        <td>文書の本体を記述するセクション</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">&lt;title&gt;</th>
+                        <td>ページタイトルを記載する</td>
+                        <td>通常は&lt;h1&gt;タグと同じものを書く</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">&lt;style&gt;</th>
+                        <td>CSSと同じ形式でスタイルシートを記述する</td>
+                        <td>&lt;head&gt;内で記載するスタイルシートを内部参照と呼ぶ</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">&lt;link&gt;</th>
+                        <td>外部リソースファイルを指定する(CSS,JSなど)</td>
+                        <td>外部リソースファイルで呼び出すスタイルシートを外部参照と呼ぶ</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">&lt;p&gt;</th>
+                        <td>パラグラフを作る</td>
+                        <td>一番オーソドックスな文字の記述法</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">&lt;h1&gt;～&lt;h6&gt;</th>
+                        <td>見出しを作る</td>
+                        <td>&lt;h1&gt;が最上位、&lt;h6&gt;が最下位</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">&lt;div&gt;</th>
+                        <td>あるセクションをひとまとめにする</td>
+                        <td>classプロパティを使ってスタイルシートを適用する範囲を定義したりする<br>&lt;div&gt;を使うと改行される</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">&lt;span&gt;</th>
+                        <td>あるインライン要素をひとまとめにする</td>
+                        <td>classプロパティを使ってスタイルシートを適用する範囲を定義したりする<br>&lt;span&gt;は改行されない</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">&lt;input&gt;</th>
+                        <td>インプットフィールドを作る</td>
+                        <td>typeプロパティで種類を指定する<br>主要なのはemail,passwordなど</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">&lt;button&gt;</th>
+                        <td>ボタンを作る</td>
+                        <td>&lt;input type="submit" value="hoge"&gt;は古い書き方なので非推奨</td>
+                    </tr>
+
+                </tbody>
+            </table>
+
+            <h2>プロパティ</h2>
+            <p>文字の大きさや背景色など、属性を指定するもの</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th scope="col">プロパティ</th>
+                        <th scope="col">説明</th>
+                        <th scope="col">備考</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">font-size</th>
+                        <td>フォントのサイズを指定する</td>
+                        <td>px,em(倍率)などで指定できる</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">margin</th>
+                        <td>要素の外側の余白を指定する</td>
+                        <td>top,right,bottom,leftの4つをまとめたショートハンドプロパティ</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">class</th>
+                        <td>&lt;div&gt;などでまとめた要素をグループ化する</td>
+                        <td>class="hoge"と記載すれば、hogeに対するスタイルシートをまとめて定義できる<br>グローバル属性</td>
+                    </tr>
+                </tbody>
+            </table>
+
+
+            <h2>お作法</h2>
+            <p>htmlのコードを書く上でのお作法</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th scope="col">記述</th>
+                        <th scope="col">役割</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">&lt;!DOCTYPE html&gt;</th>
+                        <td>ドキュメントタイプの宣言</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">&lt;meta charset="UTF-8"&gt;</th>
+                        <td>headタグ内に記載。文字コードを指定する。</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">&lt;meta name="viewport" content="width=device-width"&gt;</th>
+                        <td>headタグ内に記載。レスポンシブルデザインであることを表す？</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </body>
 </html>
