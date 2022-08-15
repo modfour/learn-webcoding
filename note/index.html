@@ -62,7 +62,7 @@
                     </tr>
                     <tr>
                         <th scope="row">&lt;div&gt;</th>
-                        <td>あるセクションをひとまとめにする</td>
+                        <td>ある部分をひとまとめにする</td>
                         <td>classプロパティを使ってスタイルシートを適用する範囲を定義したりする<br>&lt;div&gt;を使うと改行される</td>
                     </tr>
                     <tr>
@@ -80,7 +80,16 @@
                         <td>ボタンを作る</td>
                         <td>&lt;input type="submit" value="hoge"&gt;は古い書き方なので非推奨</td>
                     </tr>
-
+                    <tr>
+                        <th scope="row">&lt;section&gt;</th>
+                        <td>セクションを作る</td>
+                        <td>セクションが違えば、&lt;h1&gt;タグが複数あってもよい<br>セクションが複数あってもよいが、一般的にはclass属性などで何に関するセクションかを明示する</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">&lt;header&gt;</th>
+                        <td>ヘッダーセクションを作る<br>一般的に1つのページに&lt;header&gt;は1つ</td>
+                        <td></td>
+                    </tr>                    
                 </tbody>
             </table>
 
@@ -109,6 +118,11 @@
                         <th scope="row">class</th>
                         <td>&lt;div&gt;などでまとめた要素をグループ化する</td>
                         <td>class="hoge"と記載すれば、hogeに対するスタイルシートをまとめて定義できる<br>グローバル属性</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">id</th>
+                        <td>&lt;div&gt;などでまとめた要素を特定する</td>
+                        <td>class属性と似ているが、JavaScriptとの連携でよく用いる<br>グローバル属性</td>
                     </tr>
                 </tbody>
             </table>
