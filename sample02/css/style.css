@@ -98,7 +98,7 @@ footer {
 
 @media only screen and (max-width: 600px) {
     .description img {
-        float: note;
+        float: none;
         display: block;
         margin: 0 auto;
     }
