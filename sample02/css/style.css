@@ -88,3 +88,8 @@ header h1 { /* 親要素を指定することが可能 */
 a {
     color: #666;
 }
+
+footer {
+    text-align: center;
+    font-size: 80%;
+}
