@@ -15,17 +15,25 @@
             </div>
         </div>
         <script>
-            var now = new Date();
-            var seconds = now.getSeconds();
-            if (seconds < 10) {
-                seconds = '0' + seconds;
+            // 1桁ならゼロを追加する関数
+            var addZero = function(value){
+                if (value < 10){
+                    value = '0' + value;
+                }
+                return value;
             }
-            var minutes = now.getMinutes();
-            if (minutes < 10) {
-                minutes = '0' + minutes;
-            }
-            var hours = now.getHours()
-            document.getElementById("timer").innerHTML = hours + ':' + minutes + ':' + seconds;
+            
+            document.getElementById("start_stop").addEventListener("click",
+            function() {
+                var now = new Date();
+                var seconds = now.getSeconds();
+                var minutes = now.getMinutes();
+                var hours = now.getHours()
+                seconds = addZero(seconds);
+                minutes = addZero(minutes);
+
+                document.getElementById("timer").innerHTML = hours + ':' + minutes + ':' + seconds;
+            });
         </script>
     </body>
 </html>
