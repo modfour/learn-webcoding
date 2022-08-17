@@ -13,7 +13,15 @@
     <body>
         <div class="container">
             <header>
-                <h1>ご利用アンケート</h1>
+                <div class="row">
+                    <!-- bootstrapでは1行12列の構成になっている-->
+                    <div class="col-sm-6"> <!-- small(スマートフォンサイズ）まで6列分の幅（半分）のマス目 -->
+                        <h1>ご利用アンケート</h1>
+                    </div>
+                    <div class="col-sm-6 text-end"> <!-- bootstrap5ではクラス名が変更になっている -->
+                        <a href="#">Homeに戻る</a>    
+                    </div>
+                </div>
             </header>
         </div>
         <hr>
