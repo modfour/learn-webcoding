@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Timer</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="container">
+            <p id="timer">0:00:00</p>
+            <div>
+                <button id="start_stop" class="btn btn-lg btn-primary">START</button>
+            </div>
+        </div>
+        <script>
+            var timer_id;
+            // 1桁ならゼロを追加する関数
+            var addZero = function(value){
+                if (value < 10){
+                    value = '0' + value;
+                }
+                return value;
+            }
+
+            var goTimer = function(start){
+                var now = new Date();
+                var milisec = now.getTime() - start.getTime();
+                var seconds = Math.floor(milisec / 1000);
+                var minutes = Math.floor(seconds / 60);
+                var hours = Math.floor(minutes / 60);
+
+                var seconds_disp = addZero(seconds % 60);
+                var minutes_disp = addZero(minutes % 60);
+                var hours_disp = addZero(hours);
+                
+                document.getElementById("timer").innerHTML = hours_disp + ':' + minutes_disp + ':' + seconds_disp;
+            }
+            
+            // 無名関数を用いたイベントリスナーの追加
+            document.getElementById("start_stop").addEventListener("click", function() {
+                if (this.innerHTML === 'START'){
+                    var start = new Date();
+                    // setIntervalで引数を渡す場合、無名関数を使うかbindする必要がある
+                    // 講義では、startをグローバル変数としていた
+                    timer_id = setInterval(goTimer.bind(undefined, start), 10);
+                    this.innerHTML = 'STOP';
+                    this.classList.remove("btn-primary");
+                    this.classList.add("btn-danger");
+                }else{
+                    this.innerHTML = 'START';
+                    this.classList.remove("btn-danger");
+                    this.classList.add("btn-primary");
+                    clearInterval(timer_id);
+                }
+            });
+        </script>
+    </body>
+</html>
