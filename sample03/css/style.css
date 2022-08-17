@@ -4,11 +4,18 @@ header {
 }
 
 hr {
-    border: 3px solid var(--bs-blue); /* bootstrap5ではborder-widthが効かない？ */
     margin: 30px 0;
 }
 
 h1 {
     font-size: 18px;
     font-weight: bold;
+}
+
+.form-group>label {
+    font-weight: bold;
+}
+
+.form-group {
+    margin: 10px auto;
 }

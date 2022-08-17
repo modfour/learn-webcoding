@@ -24,15 +24,15 @@
                 </div>
             </header>
         </div>
-        <hr>
+        <hr class="border border-3">
         <div class="container">
             <form action="" method="post" class="row">
                 <div class="col-sm-8 offset-sm-2">
                     <p>この度は、本書をご利用いただきありがとうございます。<br>
                         恐れ入りますが、以下のフォームにご記入いただき、送信していただけると幸いです。</p>
                     <div class="form-group">
-                        <label for="name">お名前</label>
-                        <input type="text" id="name" name="name" class="form-control" placeholder="例：山田 太郎">
+                        <label for="name">お名前 <span class="badge bg-danger">必須</span></label> <!--bs5ではクラス名が変更になっている-->
+                        <input type="text" id="name" name="name" class="form-control" placeholder="例：山田 太郎" required>
                     </div>
                     
                     <div class="form-group">
@@ -90,9 +90,9 @@
                 </div>
             </form>    
         </div>
-        <hr>
+        <hr class="border border-3">
         <div class="container">
-            <footer>
+            <footer class="text-center">
                 <p>&copy;Mod4</p>
             </footer>    
         </div>
