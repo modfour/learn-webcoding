@@ -15,7 +15,9 @@
             <p>Before the Script</p>
             <script>
                 // 日付を表示するスクリプト
-                document.write('<p class="date">20XX/1/23</p>');
+                var today = new Date();
+                var todayString = today.getFullYear() + '/' + (today.getMonth()+1) + '/' + today.getDate();
+                document.write('<p class="date">今日は' + todayString + 'です</p>');
             </script>
             <p>After the Script</p>
             <p>HTML上にJSを記述してdocument.write()すると、JSの書かれた箇所にオブジェクトが追加される</p>
