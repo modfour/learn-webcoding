@@ -15,6 +15,7 @@
             </div>
         </div>
         <script>
+            var timer_id;
             // 1桁ならゼロを追加する関数
             var addZero = function(value){
                 if (value < 10){
@@ -39,9 +40,20 @@
             
             // 無名関数を用いたイベントリスナーの追加
             document.getElementById("start_stop").addEventListener("click", function() {
-                var start = new Date();
-                // setIntervalで引数を渡す場合、無名関数を使うかbindする必要がある
-                setInterval(goTimer.bind(undefined, start), 10);
+                if (this.innerHTML === 'START'){
+                    var start = new Date();
+                    // setIntervalで引数を渡す場合、無名関数を使うかbindする必要がある
+                    // 講義では、startをグローバル変数としていた
+                    timer_id = setInterval(goTimer.bind(undefined, start), 10);
+                    this.innerHTML = 'STOP';
+                    this.classList.remove("btn-primary");
+                    this.classList.add("btn-danger");
+                }else{
+                    this.innerHTML = 'START';
+                    this.classList.remove("btn-danger");
+                    this.classList.add("btn-primary");
+                    clearInterval(timer_id);
+                }
             });
         </script>
     </body>
