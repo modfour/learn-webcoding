@@ -14,7 +14,7 @@
                 <div v-for="Note in Notes">
                     <h2>{{ Note.topic }}</h2>
                     <ul>
-                        <li v-for="description in Note.Descriptions">{{ description }}</li>
+                        <li class="description" v-for="description in Note.Descriptions">{{ description }}</li>
                     </ul>    
                 </div>
             </div>
