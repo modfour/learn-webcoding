@@ -31,6 +31,31 @@
                 </ul>
                 <li>セレクタが同じ場合、セレクタを省略してメソッドを連続させるメソッドチェーンが使用可能</li>
             </ul>
+            <div id="note_unit">
+                <div v-for="Note in Notes">
+                    <h2>{{ Note.topic }}</h2>
+                    <ul>
+                        <li v-for="description in Note.Descriptions">{{ description }}</li>
+                    </ul>    
+                </div>
+            </div>
         </div>
+
+        <script src="js/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+        <script>
+            var app = new Vue({
+                el: '#note_unit',
+                data: {
+                    Notes: [] 
+                },
+                created: function() {
+                    var self = this;
+                    $.getJSON('https://modfour.github.io/learn-webcoding/note/data.json', function(data){
+                        self.Notes = data
+                    });
+                }
+            });
+        </script>
     </body>
 </html>
