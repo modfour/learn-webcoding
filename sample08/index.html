@@ -15,31 +15,26 @@
         </header>
         <div class="container">
             <div id="img_unit">
-            </div>
-            <div id="vue_unit">
-                {{ greeting }}<br>
-                {{ message }}
+                <div class="photo" v-for="Photo in Photos">
+                    <img :src="Photo.path">
+                    <div class="inner"><p>{{ Photo.caption }}<span>{{ Photo.name }}</span></p></div>
+                </div>
             </div>
         </div>
 
         <script src="js/jquery.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
         <script>
-            /* 第二引数はコールバック関数になっていて、通信の完了を待つ必要がない */
-            $.getJSON('https://h2o-space.com/htmlbook/images.php', function(data){
-                data.forEach(function(image){
-                    $('<div class="photo"></div>')
-                        .append('<img src="' + image.path + '">')
-                        .append('<div class="inner"><p>'+image.caption+"<span>"+image.name+"</span></p>")
-                        .appendTo('#img_unit');
-                });
-            });
-
-            var app = new Vue ({
-                el: '#vue_unit',
+            var app = new Vue({
+                el: '#img_unit',
                 data: {
-                    message: 'Vue.jsで書き換えました',
-                    greeting: 'Hello, world!'
+                    Photos: [] 
+                },
+                created: function() {
+                    var self = this;
+                    $.getJSON('https://h2o-space.com/htmlbook/images.php', function(data){
+                        self.Photos = data
+                    });
                 }
             });
         </script>
