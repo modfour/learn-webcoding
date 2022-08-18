@@ -1,7 +1,7 @@
 [
     {
         "topic": "Vue.jsについて",
-        "descriptions": [
+        "Descriptions": [
             "{{ hoge }}のように記述された箇所がVue.jsのプレースホルダになる",
             "属性値を変更する場合、プレースホルダとして:src='hoge'と記載する"
         ]
