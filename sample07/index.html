@@ -20,9 +20,15 @@
 
         <script src="js/jquery.min.js"></script>
         <script>
-            /* JQueryはメソッドチェーンを用いることができる
-                セレクタ（$('img_unit')）が同じなら、複数のメソッドを同時に使うことができる */
-            $('#img_unit').html('ここに画像リストが表示される').css('margin-top','100px');
+            /* 第二引数はコールバック関数になっていて、通信の完了を待つ必要がない */
+            $.getJSON('https://h2o-space.com/htmlbook/images.php', function(data){
+                data.forEach(function(image){
+                    $('<div class="photo"></div>')
+                        .append('<img src="' + image.path + '">')
+                        .append('<div class="inner"><p>'+image.caption+"<span>"+image.name+"</span></p>")
+                        .appendTo('#img_unit');
+                });
+            });
         </script>
     </body>
 </html>
