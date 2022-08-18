@@ -15,10 +15,6 @@
         </header>
         <div class="container">
             <div id="img_unit">
-                <div class="photo">
-                    <img src="img/img01.jpg" alt="my photo">
-                    <div class="inner"><p>コメント1 <span>nickname</span></p></div>
-                </div>
             </div>
         </div>
 
@@ -40,8 +36,27 @@
                     "caption": "コメント03" 
                 }
             ];
+            
+            var photo;
+            var img;
+            var caption;
+                
+            images.forEach(function(image) {
+                photo = document.createElement('div');
+                photo.className = 'photo'; /* photo.setAttribute('class','photo'); */
 
-            alert(images[0].caption);
+                img = document.createElement('img');
+                img.setAttribute('src',image.path);
+                
+                caption = document.createElement('div');
+                caption.className = 'inner'; /* caption.setAttribute('class','inner'); */
+                caption.innerHTML = '<p>' + image.caption + '<span>' + image.name + '</span></p>';
+
+                photo.appendChild(img);
+                photo.appendChild(caption);
+                document.getElementById('img_unit').appendChild(photo);
+            });
+            
         </script>
     </body>
 </html>
