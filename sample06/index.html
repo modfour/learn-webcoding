@@ -16,10 +16,32 @@
         <div class="container">
             <div id="img_unit">
                 <div class="photo">
-                    <img src="img/img.jpg" alt="my photo">
-                    <div class="innner"><p>コメント1 <span>nickname</span></p></div>
+                    <img src="img/img01.jpg" alt="my photo">
+                    <div class="inner"><p>コメント1 <span>nickname</span></p></div>
                 </div>
             </div>
         </div>
+
+        <script>
+            var images = [
+                {
+                    "path": "img/img01.jpg",
+                    "name": "name01",
+                    "caption": "コメント01" 
+                },
+                {
+                    "path": "img/img02.jpg",
+                    "name": "name02",
+                    "caption": "コメント02" 
+                },
+                {
+                    "path": "img/img03.jpg",
+                    "name": "name03",
+                    "caption": "コメント03" 
+                }
+            ];
+
+            alert(images[0].caption);
+        </script>
     </body>
 </html>
