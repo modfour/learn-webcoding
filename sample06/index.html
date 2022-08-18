@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <title>My Photos</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <header>
+            <h1>My Photos</h1>
+        </header>
+        <div class="container">
+            <div id="img_unit">
+            </div>
+        </div>
+
+        <script>
+            var ajax = new XMLHttpRequest();
+            ajax.open('GET',"https://h2o-space.com/htmlbook/images.php");
+            ajax.responseType = 'json';
+            ajax.send(null);
+
+            ajax.onreadystatechange = function(){
+                // ajax.readyState... 0:UNSENT, 1:OPENED, 2:HEADERS_RECEIVED, 3:LOADING, 4:DONE
+                if (ajax.readyState === XMLHttpRequest.DONE && ajax.status === 200){
+                    var photo;
+                    var img;
+                    var caption;
+
+                    this.response.forEach(function(image) {
+                        photo = document.createElement('div');
+                        photo.className = 'photo'; /* photo.setAttribute('class','photo'); */
+
+                        img = document.createElement('img');
+                        img.setAttribute('src',image.path);
+                
+                        caption = document.createElement('div');
+                        caption.className = 'inner'; /* caption.setAttribute('class','inner'); */
+                        caption.innerHTML = '<p>' + image.caption + '<span>' + image.name + '</span></p>';
+
+                        photo.appendChild(img);
+                        photo.appendChild(caption);
+                        document.getElementById('img_unit').appendChild(photo);
+                    });
+                }
+            }
+        </script>
+    </body>
+</html>
